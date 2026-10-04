@@ -1,5 +1,91 @@
 .header {
-  padding: 10px 15px;
-  color: #ffffff;
-  background-color: #663399;
+  background-color: $color-white;
+}
+
+.header__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+
+  @media (min-width: $tablet-width) {
+    min-height: 80px;
+  }
+}
+
+.header__logo {
+  display: block;
+  flex-shrink: 0;
+}
+
+.header__logo-image {
+  display: block;
+}
+
+.header__description {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    width: 126px;
+    margin: 0 0 0 20px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.header__nav {
+  @media (min-width: $tablet-width) {
+    margin-left: 67px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: auto;
+  }
+}
+
+.header__user-nav {
+  margin-left: auto;
+}
+
+.header__toggle {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  margin-right: -20px;
+  padding: 0;
+  color: $color-black;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+
+  &::before {
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 0 auto;
+    content: "";
+    background-color: currentcolor;
+    mask-image: url("../../icons/burger.svg");
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-primary;
+  }
+
+  &:active {
+    color: $color-black;
+    background-color: $color-secondary;
+  }
+
+  &--opened::before {
+    mask-image: url("../../icons/close.svg");
+  }
 }
