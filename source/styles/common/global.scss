@@ -13,4 +13,8 @@ img {
 body {
   min-width: $mobile-width;
   margin: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 400;
+  color: $color-black;
+  background-color: $color-white;
 }
