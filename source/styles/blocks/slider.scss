@@ -1,0 +1,127 @@
+.slider {
+  position: relative;
+}
+
+.slider__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slider__item {
+  display: none;
+
+  &--current {
+    display: block;
+  }
+}
+
+.slider__controls {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.slider__button {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 100%;
+  padding: 0;
+  color: $color-primary;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+
+  @media (min-width: $tablet-width) {
+    width: 80px;
+    height: 640px;
+  }
+
+  @media (min-width: $desktop-width) {
+    height: 100%;
+  }
+
+  &::before {
+    width: 11px;
+    height: 20px;
+    content: "";
+    background-color: currentcolor;
+    mask-image: url("../../icons/slider-arrow.svg");
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-image: linear-gradient(90deg, $color-white 0%, rgb(255 255 255 / 0%) 100%);
+  }
+
+  &:active {
+    background-image: linear-gradient(90deg, $color-primary-opacity 0%, rgb(120 89 207 / 0%) 100%);
+  }
+
+  &:disabled {
+    color: $color-grey;
+    background-image: none;
+    cursor: default;
+  }
+
+  &--prev {
+    left: 0;
+  }
+
+  &--next {
+    right: 0;
+    transform: scaleX(-1);
+  }
+}
+
+.slider__pagination {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    position: absolute;
+    top: 630px;
+    left: 50%;
+    display: flex;
+    gap: 8px;
+    transform: translateX(-50%);
+    pointer-events: auto;
+  }
+}
+
+.slider__pagination-button {
+  display: flex;
+  align-items: center;
+  width: 62px;
+  height: 24px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &::before {
+    width: 100%;
+    height: 4px;
+    content: "";
+    background-color: $color-white;
+  }
+
+  &:hover::before,
+  &:focus-visible::before {
+    background-color: $color-primary-opacity;
+  }
+
+  &:active::before,
+  &--current::before,
+  &--current:hover::before,
+  &--current:focus-visible::before {
+    background-color: $color-primary;
+  }
+}
