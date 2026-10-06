@@ -25,4 +25,20 @@
     background-color: $color-grey;
     cursor: default;
   }
+
+  &--secondary {
+    color: $color-primary;
+    background-color: $color-white;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-primary-lighter;
+      background-color: $color-white;
+    }
+
+    &:active {
+      color: $color-primary-darker;
+      background-color: $color-white;
+    }
+  }
 }

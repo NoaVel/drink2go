@@ -11,6 +11,7 @@
     <link href="favicons/32.png" rel="icon" type="image/png" sizes="32x32">
     <link href="favicons/180.png" rel="apple-touch-icon">
     <link href="styles/styles.css" rel="stylesheet">
+    <script src="vendor/nouislider/nouislider.min.js" defer></script>
     <script src="scripts/index.js" defer></script>
   </head>
   <body class="page__body">
@@ -177,6 +178,81 @@
               <p class="features__text">Вся упаковка сделана<br>из перерабатываемых материалов</p>
             </li>
           </ul>
+        </div>
+      </section>
+      <section class="catalog">
+        <div class="catalog__container container">
+          <p class="catalog__label">Каталог</p>
+          <h2 class="catalog__title">Каталог кофейных напитков</h2>
+          <form class="catalog__filter filter" action="https://echo.htmlacademy.ru" method="get">
+            <fieldset class="filter__group">
+              <legend class="filter__legend">Цена</legend>
+              <div class="filter__range">
+                <div class="filter__slider"></div>
+              </div>
+              <div class="filter__price">
+                <label class="filter__field">
+                  <span class="visually-hidden">Минимальная цена</span>
+                  <input class="filter__input" type="number" name="price-min" min="0" max="1000" placeholder="0">
+                </label>
+                <span class="filter__dash" aria-hidden="true">–</span>
+                <label class="filter__field">
+                  <span class="visually-hidden">Максимальная цена</span>
+                  <input class="filter__input" type="number" name="price-max" min="0" max="1000" value="900">
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="filter__group">
+              <legend class="filter__legend">Наличие молока</legend>
+              <div class="filter__options">
+                <label class="radio">
+                  <input class="radio__input visually-hidden" type="radio" name="milk" value="any" checked>
+                  <span class="radio__label">Неважно</span>
+                </label>
+                <label class="radio">
+                  <input class="radio__input visually-hidden" type="radio" name="milk" value="animal">
+                  <span class="radio__label">Только животное</span>
+                </label>
+                <label class="radio">
+                  <input class="radio__input visually-hidden" type="radio" name="milk" value="vegetable">
+                  <span class="radio__label">Только растительное</span>
+                </label>
+                <label class="radio">
+                  <input class="radio__input visually-hidden" type="radio" name="milk" value="none" disabled>
+                  <span class="radio__label">Без молока</span>
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="filter__group">
+              <legend class="filter__legend">Страна произрастания</legend>
+              <div class="filter__options">
+                <label class="toggle">
+                  <input class="toggle__input visually-hidden" type="checkbox" name="country" value="brazil" checked>
+                  <span class="toggle__label">Бразилия</span>
+                </label>
+                <label class="toggle">
+                  <input class="toggle__input visually-hidden" type="checkbox" name="country" value="ethiopia">
+                  <span class="toggle__label">Эфиопия</span>
+                </label>
+                <label class="toggle">
+                  <input class="toggle__input visually-hidden" type="checkbox" name="country" value="colombia">
+                  <span class="toggle__label">Колумбия</span>
+                </label>
+                <label class="toggle">
+                  <input class="toggle__input visually-hidden" type="checkbox" name="country" value="costa-rica">
+                  <span class="toggle__label">Коста-Рика</span>
+                </label>
+                <label class="toggle">
+                  <input class="toggle__input visually-hidden" type="checkbox" name="country" value="peru" disabled>
+                  <span class="toggle__label">Перу</span>
+                </label>
+              </div>
+            </fieldset>
+            <div class="filter__buttons">
+              <button class="filter__button button" type="submit">Применить</button>
+              <button class="filter__button button button--secondary" type="reset">Сбросить</button>
+            </div>
+          </form>
         </div>
       </section>
     </main>
