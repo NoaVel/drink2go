@@ -34,6 +34,12 @@
   }
 }
 
+.toggle__input:not(:checked, :disabled) + .toggle__label:hover::before,
+.toggle__input:not(:checked):focus-visible + .toggle__label::before {
+  background-color: $color-primary-opacity;
+  box-shadow: inset 0 0 0 2px $color-primary-lighter;
+}
+
 .toggle__input:checked + .toggle__label::before {
   background-color: $color-primary;
 }
@@ -42,11 +48,7 @@
   transform: translateX(18px);
 }
 
-.toggle__input:checked + .toggle__label:hover::before {
-  background-color: $color-primary-lighter;
-}
-
-.toggle__input:focus-visible + .toggle__label::before {
+.toggle__input:checked:focus-visible + .toggle__label::before {
   outline: 2px solid $color-primary-lighter;
   outline-offset: 2px;
 }
@@ -58,4 +60,12 @@
 
 .toggle__input:disabled + .toggle__label::before {
   background-color: $color-light-grey;
+}
+
+.toggle__input:disabled + .toggle__label::after {
+  background-color: $color-lightest-grey;
+}
+
+.toggle__input:disabled:checked + .toggle__label::after {
+  background-color: $color-grey;
 }
