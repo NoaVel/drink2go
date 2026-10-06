@@ -6,6 +6,7 @@
   line-height: 24px;
   text-align: center;
   text-decoration: none;
+  overflow-wrap: anywhere;
   color: $color-white;
   background-color: $color-primary;
   border: none;
@@ -24,5 +25,26 @@
   &:disabled {
     background-color: $color-grey;
     cursor: default;
+  }
+
+  &--secondary {
+    color: $color-primary;
+    background-color: $color-white;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-white;
+      background-color: $color-primary-lighter;
+    }
+
+    &:active {
+      color: $color-white;
+      background-color: $color-primary-darker;
+    }
+
+    &:disabled {
+      color: $color-white;
+      background-color: $color-light-grey;
+    }
   }
 }
