@@ -71,3 +71,27 @@
     margin-bottom: 26px;
   }
 }
+
+.catalog__list {
+  display: grid;
+  gap: 20px;
+  margin: 0 0 40px;
+  padding: 0;
+  list-style: none;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 70px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 60px;
+  }
+}
+
+.catalog__item {
+  display: flex;
+  min-width: 0;
+}
