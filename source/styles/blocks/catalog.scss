@@ -29,6 +29,7 @@
   letter-spacing: 0.04em;
   text-align: center;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
   color: $color-primary;
 
   @media (min-width: $desktop-width) {
