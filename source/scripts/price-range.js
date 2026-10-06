@@ -45,4 +45,10 @@ export function initPriceRange() {
   form.addEventListener('reset', () => {
     slider.noUiSlider.reset();
   });
+
+  form.addEventListener('submit', () => {
+    if (!minInput.value) {
+      minInput.value = 0;
+    }
+  });
 }
