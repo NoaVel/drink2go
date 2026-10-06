@@ -67,6 +67,10 @@
   border: none;
   border-radius: 0;
   box-shadow: none;
+
+  @media (min-width: $desktop-width) {
+    right: 3px;
+  }
 }
 
 .filter__price {
