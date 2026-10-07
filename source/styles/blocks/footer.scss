@@ -22,7 +22,6 @@
 
 .footer__brand {
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
   align-items: center;
   justify-content: space-between;
@@ -62,7 +61,10 @@
 }
 
 .footer__social {
+  justify-content: flex-end;
+
   @media (min-width: $desktop-width) {
+    justify-content: flex-start;
     margin-top: 50px;
   }
 }
