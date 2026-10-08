@@ -57,6 +57,12 @@
   &:focus-visible {
     background-color: $color-secondary;
   }
+
+  &:disabled {
+    color: $color-grey;
+    background-color: transparent;
+    cursor: default;
+  }
 }
 
 .sort__field:has(.sort__select:active)::after {
@@ -65,4 +71,8 @@
 
 .sort__field:has(.sort__select:open)::after {
   transform: rotate(180deg);
+}
+
+.sort__field:has(.sort__select:disabled)::after {
+  background-color: $color-grey;
 }

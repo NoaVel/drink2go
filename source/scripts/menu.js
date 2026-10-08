@@ -16,26 +16,7 @@ const initMenu = () => {
     toggleText.textContent = isOpened ? 'Закрыть меню' : 'Открыть меню';
   };
 
-  const onNavClick = (evt) => {
-    const link = evt.target.closest('.main-nav__link');
-
-    if (!link) {
-      return;
-    }
-
-    const currentLink = nav.querySelector('.main-nav__link--current');
-
-    if (currentLink) {
-      currentLink.classList.remove('main-nav__link--current');
-      currentLink.removeAttribute('aria-current');
-    }
-
-    link.classList.add('main-nav__link--current');
-    link.setAttribute('aria-current', 'page');
-  };
-
   toggle.addEventListener('click', onToggleClick);
-  nav.addEventListener('click', onNavClick);
 };
 
 export {initMenu};
