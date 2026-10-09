@@ -34,13 +34,26 @@ export function initPriceRange() {
     }
   });
 
-  minInput.addEventListener('change', () => {
+  const setMinPrice = () => {
     slider.noUiSlider.set([minInput.value || 0, null]);
-  });
+  };
 
-  maxInput.addEventListener('change', () => {
+  const setMaxPrice = () => {
     slider.noUiSlider.set([null, maxInput.value]);
-  });
+  };
+
+  const onPriceKeydown = (evt, setPrice) => {
+    if (evt.key === 'Enter') {
+      evt.preventDefault();
+      setPrice();
+    }
+  };
+
+  minInput.addEventListener('change', setMinPrice);
+  maxInput.addEventListener('change', setMaxPrice);
+
+  minInput.addEventListener('keydown', (evt) => onPriceKeydown(evt, setMinPrice));
+  maxInput.addEventListener('keydown', (evt) => onPriceKeydown(evt, setMaxPrice));
 
   form.addEventListener('reset', () => {
     slider.noUiSlider.reset();
